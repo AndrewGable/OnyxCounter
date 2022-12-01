@@ -22,4 +22,11 @@ export default StyleSheet.create({
     scroll: {
         paddingBottom: 100,
     },
+    h3: {
+        textAlign: 'center',
+        fontSize: 18,
+        fontWeight: '700',
+        marginTop: 12,
+        marginBottom: 12,
+    },
 });

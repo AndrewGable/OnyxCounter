@@ -9,6 +9,7 @@ import {
 
 const OnyxExamples = ({counter = 0}) => (
     <View>
+        <Text style={style.h3}>Fetching Data</Text>
         <TouchableOpacity style={style.button} onPress={startNumberFactService}>
             <Text>Fetch 🔢 facts!</Text>
         </TouchableOpacity>

@@ -1,4 +1,4 @@
-import {SafeAreaView, ScrollView, View} from 'react-native';
+import {SafeAreaView, ScrollView, Text, View} from 'react-native';
 import style from './src/Style';
 import React from 'react';
 
@@ -21,6 +21,7 @@ const App = () => {
         <View>
             <SafeAreaView />
             <ScrollView contentContainerStyle={style.scroll}>
+                <Text style={style.h3}>State vs. Onyx</Text>
                 <StateCounter />
                 <OnyxCounter />
                 <View style={style.hr} />

@@ -23,11 +23,12 @@ function insertData() {
 const OnyxRelationships = ({owners = {}, pets = {}}) => {
     return (
         <View style={style.container}>
+            <Text style={style.h3}>Collections with Relationships</Text>
             <TouchableOpacity style={style.button} onPress={Onyx.clear}>
                 <Text>Clear Onyx</Text>
             </TouchableOpacity>
             <TouchableOpacity style={style.button} onPress={insertData}>
-                <Text>Insert Data</Text>
+                <Text>Insert Initial Data</Text>
             </TouchableOpacity>
             {_.map(_.compact(pets), pet => {
                 const owner = {};

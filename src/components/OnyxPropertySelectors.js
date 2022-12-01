@@ -17,11 +17,12 @@ const OnyxPropertySelectors = ({vehicle = {}}) => {
     renderCount++;
     return (
         <View style={style.container}>
+            <Text style={style.h3}>Using Property Selectors</Text>
             <TouchableOpacity style={style.button} onPress={Onyx.clear}>
                 <Text>Clear Onyx</Text>
             </TouchableOpacity>
             <TouchableOpacity style={style.button} onPress={insertData}>
-                <Text>Insert Data</Text>
+                <Text>Insert Initial Data</Text>
             </TouchableOpacity>
             <Text style={style.text}>Render count: {renderCount}</Text>
             <Text style={style.text}>

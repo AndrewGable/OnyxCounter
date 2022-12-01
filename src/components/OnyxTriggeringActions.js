@@ -13,9 +13,19 @@ function insertData() {
     Onyx.mergeCollection(ONYXKEYS.COLLECTION.OWNERS, originalOwners);
 }
 
+// Onyx.connect({
+//     key: ONYXKEYS.COLLECTION.OWNERS,
+//     callback: (owner) => {
+//         if (owner && !owner.name) {
+//             Onyx.merge(`${ONYXKEYS.COLLECTION.OWNERS}${owner.id}`, {name: 'Andrew'});
+//         }
+//     }
+// });
+
 const OnyxTriggeringActions = ({owners = {}}) => {
     return (
         <View style={style.container}>
+            <Text style={style.h3}>Triggering Actions with Onyx.connect()</Text>
             <TouchableOpacity style={style.button} onPress={Onyx.clear}>
                 <Text>Clear Onyx</Text>
             </TouchableOpacity>
@@ -39,12 +49,3 @@ export default withOnyx({
         key: ONYXKEYS.COLLECTION.OWNERS,
     },
 })(OnyxTriggeringActions);
-
-// Onyx.connect({
-//     key: ONYXKEYS.COLLECTION.OWNERS,
-//     callback: (owner) => {
-//         if (owner && !owner.name) {
-//             Onyx.merge(`${ONYXKEYS.COLLECTION.OWNERS}${owner.id}`, {name: 'Andrew'});
-//         }
-//     }
-// });
