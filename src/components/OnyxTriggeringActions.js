@@ -9,13 +9,14 @@ const owners = {
     owners_1: {id: 1, name: 'Tim'},
     owners_2: {id: 2, name: null},
 };
-Onyx.mergeCollection(ONYXKEYS.COLLECTION.OWNERS, owners);
+Onyx.clear().then(() => {
+    Onyx.mergeCollection(ONYXKEYS.COLLECTION.OWNERS, owners);
+});
 
 const OnyxTriggeringActions = ({owners = {}}) => {
     return (
         <View style={style.container}>
-            <Button title="Clear Onyx" onPress={Onyx.clear} />
-            {_.map(owners, (owner) => {
+            {_.map(owners, owner => {
                 if (!owner) return null;
                 return (
                     <View key={owner.id}>
@@ -24,7 +25,7 @@ const OnyxTriggeringActions = ({owners = {}}) => {
                 );
             })}
         </View>
-    )
+    );
 };
 
 export default withOnyx({
@@ -32,7 +33,6 @@ export default withOnyx({
         key: ONYXKEYS.COLLECTION.OWNERS,
     },
 })(OnyxTriggeringActions);
-
 
 // Onyx.connect({
 //     key: ONYXKEYS.COLLECTION.OWNERS,

@@ -14,7 +14,6 @@
     "expensify-common": "git+https://github.com/Expensify/expensify-common.git#db2c245c1e6b39232092b1415b9235fadda2a529",
     "react": "18.1.0",
     "react-native": "0.70.6",
-    "react-native-flipper": "^0.175.0",
     "react-native-onyx": "^1.0.29",
     "react-native-performance": "^2.1.0"
   },

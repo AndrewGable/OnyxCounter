@@ -8,8 +8,8 @@ let timeoutID;
  * Listen for changes to the NUMBER_FACTS Onyx key
  */
 Onyx.connect({
-  key: ONYXKEYS.NUMBER_FACTS,
-  callback: val => showFacts(val),
+    key: ONYXKEYS.NUMBER_FACTS,
+    callback: val => showFacts(val),
 });
 
 /**
@@ -17,20 +17,20 @@ Onyx.connect({
  * @returns {Promise<string>}
  */
 function fetchNumberFact() {
-  return fetch('http://numbersapi.com/random/trivia')
-    .then(response => response.text())
-    .catch(error => {
-      console.error(error);
-    });
+    return fetch('http://numbersapi.com/random/trivia')
+        .then(response => response.text())
+        .catch(error => {
+            console.error(error);
+        });
 }
 
 /**
  * Gets and saves a number fact into the NUMBER_FACTS array
  */
 function getAndSaveNumberFact() {
-  fetchNumberFact().then(fact => {
-    Onyx.merge(ONYXKEYS.NUMBER_FACTS, [fact]);
-  });
+    fetchNumberFact().then(fact => {
+        Onyx.merge(ONYXKEYS.NUMBER_FACTS, [fact]);
+    });
 }
 
 /**
@@ -38,28 +38,28 @@ function getAndSaveNumberFact() {
  * @param facts
  */
 function showFacts(facts) {
-  if (!facts) {
-    return;
-  }
+    if (!facts) {
+        return;
+    }
 
-  Alert.alert('Number Facts', JSON.stringify(facts), [
-    {onPress: () => clearTimeout(timeoutID)},
-  ]);
+    Alert.alert('Number Facts', JSON.stringify(facts), [
+        {onPress: () => clearTimeout(timeoutID)},
+    ]);
 }
 
 /**
  * Starts a number fetching service to grab fun number facts
  */
 export function startNumberFactService() {
-  getAndSaveNumberFact();
-  timeoutID = setTimeout(startNumberFactService, 7000);
+    getAndSaveNumberFact();
+    timeoutID = setTimeout(startNumberFactService, 7000);
 }
 
 /**
  * Clears the number facts
  */
 export function clearNumberFacts() {
-  Onyx.set(ONYXKEYS.NUMBER_FACTS, []);
+    Onyx.set(ONYXKEYS.NUMBER_FACTS, []);
 }
 
 /**
@@ -67,28 +67,28 @@ export function clearNumberFacts() {
  * due to waitForCollectionCallback flag.
  */
 Onyx.connect({
-  key: ONYXKEYS.COLLECTION.FACTS,
-  waitForCollectionCallback: true,
-  callback: allFacts => {
-    if (!allFacts) {
-      return;
-    }
+    key: ONYXKEYS.COLLECTION.FACTS,
+    waitForCollectionCallback: true,
+    callback: allFacts => {
+        if (!allFacts) {
+            return;
+        }
 
-    alert(JSON.stringify(allFacts));
-  },
+        Alert.alert('All Facts', JSON.stringify(allFacts));
+    },
 });
 
 /**
  * Merges two arrays of facts together into one Onyx collection
  */
 export function mergeCatAndDogFacts() {
-  Onyx.mergeCollection(ONYXKEYS.COLLECTION.FACTS, {
-    [ONYXKEYS.COLLECTION.FACTS + 'CAT']: [
-      'In 1963 a cat went to space',
-      'Isaac Newton invented the cat door',
-    ],
-    [ONYXKEYS.COLLECTION.FACTS + 'DOG']: [
-      'Three dogs survived the Titanic sinking',
-    ],
-  });
+    Onyx.mergeCollection(ONYXKEYS.COLLECTION.FACTS, {
+        [ONYXKEYS.COLLECTION.FACTS + 'CAT']: [
+            'In 1963 a cat went to space',
+            'Isaac Newton invented the cat door',
+        ],
+        [ONYXKEYS.COLLECTION.FACTS + 'DOG']: [
+            'Three dogs survived the Titanic sinking',
+        ],
+    });
 }

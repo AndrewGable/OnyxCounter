@@ -14,22 +14,22 @@ import OnyxRelationships from './src/components/OnyxRelationships';
 import OnyxTriggeringActions from './src/components/OnyxTriggeringActions';
 
 Onyx.init({
-  keys: ONYXKEYS,
+    keys: ONYXKEYS,
 });
 
 const App: () => Node = () => {
-  return (
-    <View style={style.container}>
-      <StateCounter />
-      <OnyxCounter />
-      <View style={style.hr} />
-      <OnyxExamples />
-        <View style={style.hr} />
-        {/*<OnyxPropertySelectors />*/}
-        {/*<OnyxRelationships />*/}
-        {/*<OnyxTriggeringActions />*/}
-    </View>
-  );
+    return (
+        <View style={style.container}>
+            <StateCounter />
+            <OnyxCounter />
+            <View style={style.hr} />
+            <OnyxExamples />
+            <View style={style.hr} />
+            {/*<OnyxPropertySelectors />*/}
+            {/*<OnyxRelationships />*/}
+            {/*<OnyxTriggeringActions />*/}
+        </View>
+    );
 };
 
 export default App;
