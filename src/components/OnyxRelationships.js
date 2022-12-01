@@ -8,7 +8,7 @@ import ONYXKEYS from '../ONYXKEYS';
 const owners = {
     owners_1: {id: 1, name: 'Tim'},
     owners_2: {id: 2, name: 'Andrew'},
-}
+};
 const pets = {
     pets_1: {id: 1, name: 'Fluffy', type: 'cat', ownerID: 1},
     pets_2: {id: 2, name: 'Snowball', type: 'cat', ownerID: 1},
@@ -23,16 +23,19 @@ Onyx.clear().then(() => {
 const OnyxRelationships = ({owners = {}, pets = {}}) => {
     return (
         <View style={style.container}>
-            {_.map(_.compact(pets), (pet) => {
+            {_.map(_.compact(pets), pet => {
                 const owner = {};
                 return (
                     <View key={pet.id}>
-                        <Text>{pet.name} is a {pet.type} owned by {owner.name || 'unknown'}</Text>
+                        <Text>
+                            {pet.name} is a {pet.type} owned by{' '}
+                            {owner.name || 'unknown'}
+                        </Text>
                     </View>
                 );
             })}
         </View>
-    )
+    );
 };
 
 export default withOnyx({

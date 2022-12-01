@@ -22,20 +22,27 @@ const OnyxPropertySelectors = ({vehicle}) => {
                 style={style.button}
                 title="Add passenger"
                 onPress={() => {
-                    Onyx.merge(ONYXKEYS.VEHICLE, {numberOfPassengers: vehicle.numberOfPassengers + 1});
-                }} />
+                    Onyx.merge(ONYXKEYS.VEHICLE, {
+                        numberOfPassengers: vehicle.numberOfPassengers + 1,
+                    });
+                }}
+            />
             <Button
                 style={style.button}
                 title="Drive one mile"
                 onPress={() => {
-                    Onyx.merge(ONYXKEYS.VEHICLE, {milesDriven: vehicle.milesDriven + 1});
-                }} />
+                    Onyx.merge(ONYXKEYS.VEHICLE, {
+                        milesDriven: vehicle.milesDriven + 1,
+                    });
+                }}
+            />
             <Button
                 style={style.button}
                 title="Reset"
                 onPress={() => {
                     Onyx.set(ONYXKEYS.VEHICLE, originalVehicle);
-                }} />
+                }}
+            />
         </View>
     );
 };
