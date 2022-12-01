@@ -5,16 +5,19 @@ import style from '../Style';
 import Onyx, {withOnyx} from 'react-native-onyx';
 import ONYXKEYS from '../ONYXKEYS';
 
-const owners = {
+const originalOwners = {
     owners_1: {id: 1, name: 'Tim'},
     owners_2: {id: 2, name: null},
 };
-Onyx.mergeCollection(ONYXKEYS.COLLECTION.OWNERS, owners);
+function insertData() {
+    Onyx.mergeCollection(ONYXKEYS.COLLECTION.OWNERS, originalOwners);
+}
 
 const OnyxTriggeringActions = ({owners = {}}) => {
     return (
         <View style={style.container}>
             <Button title="Clear Onyx" onPress={Onyx.clear} />
+            <Button title="Insert Data" onPress={insertData} />
             {_.map(owners, owner => {
                 if (!owner) return null;
                 return (

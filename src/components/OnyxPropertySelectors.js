@@ -9,12 +9,16 @@ const originalVehicle = {
     numberOfPassengers: 0,
     milesDriven: 0,
 };
-Onyx.merge(ONYXKEYS.VEHICLE, originalVehicle);
+function insertData() {
+    Onyx.merge(ONYXKEYS.VEHICLE, originalVehicle);
+}
 
-const OnyxPropertySelectors = ({vehicle}) => {
+const OnyxPropertySelectors = ({vehicle = {}}) => {
     renderCount++;
     return (
         <View style={style.container}>
+            <Button title="Clear Onyx" onPress={Onyx.clear} />
+            <Button title="Insert Data" onPress={insertData} />
             <Text>Render count: {renderCount}</Text>
             <Text>Number of passengers: {vehicle.numberOfPassengers}</Text>
             <Text>Miles driven: {vehicle.milesDriven}</Text>
@@ -47,6 +51,6 @@ const OnyxPropertySelectors = ({vehicle}) => {
 export default withOnyx({
     vehicle: {
         key: ONYXKEYS.VEHICLE,
-        // selector: obj => obj && ({milesDriven: obj.milesDriven}),
+        // selector: obj => obj && {milesDriven: obj.milesDriven},
     },
 })(OnyxPropertySelectors);
