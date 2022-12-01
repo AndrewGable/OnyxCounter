@@ -9,6 +9,8 @@ import ONYXKEYS from './src/ONYXKEYS';
 import StateCounter from './src/components/StateCounter';
 import OnyxCounter from './src/components/OnyxCounter';
 import OnyxExamples from './src/components/OnyxExamples';
+import OnyxPropertySelectors from './src/components/OnyxPropertySelectors';
+import OnyxRelationships from './src/components/OnyxRelationships';
 
 Onyx.init({
   keys: ONYXKEYS,
@@ -21,6 +23,9 @@ const App: () => Node = () => {
       <OnyxCounter />
       <View style={style.hr} />
       <OnyxExamples />
+        <View style={style.hr} />
+        {/*<OnyxPropertySelectors />*/}
+        {/*<OnyxRelationships />*/}
     </View>
   );
 };
