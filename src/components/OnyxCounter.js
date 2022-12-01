@@ -5,7 +5,7 @@ import Onyx, {withOnyx} from 'react-native-onyx';
 import ONYXKEYS from '../ONYXKEYS';
 
 const OnyxCounter = ({counter = 0}) => (
-    <View style={style.container}>
+    <View>
         <Text style={style.text}>Onyx count: {counter}</Text>
         <TouchableOpacity
             style={style.button}

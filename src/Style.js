@@ -2,14 +2,11 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
     container: {
-        paddingTop: 30,
-        paddingBottom: 30,
+        padding: 4,
     },
     text: {
-        paddingTop: 10,
-        paddingBottom: 10,
         textAlign: 'center',
-        fontSize: 30,
+        fontSize: 16,
     },
     hr: {
         borderBottomColor: 'black',
@@ -18,7 +15,11 @@ export default StyleSheet.create({
     button: {
         alignItems: 'center',
         backgroundColor: 'cornflowerblue',
-        padding: 10,
-        margin: 10,
+        padding: 8,
+        margin: 8,
+        borderRadius: 10,
+    },
+    scroll: {
+        paddingBottom: 100,
     },
 });

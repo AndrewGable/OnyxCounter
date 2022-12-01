@@ -8,7 +8,7 @@ import {
 } from '../lib/FactService';
 
 const OnyxExamples = ({counter = 0}) => (
-    <View style={style.container}>
+    <View>
         <TouchableOpacity style={style.button} onPress={startNumberFactService}>
             <Text>Fetch 🔢 facts!</Text>
         </TouchableOpacity>

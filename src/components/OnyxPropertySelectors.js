@@ -1,4 +1,4 @@
-import {Text, Button, View} from 'react-native';
+import {Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
 import style from '../Style';
 import Onyx, {withOnyx} from 'react-native-onyx';
@@ -17,33 +17,42 @@ const OnyxPropertySelectors = ({vehicle = {}}) => {
     renderCount++;
     return (
         <View style={style.container}>
-            <Button title="Clear Onyx" onPress={Onyx.clear} />
-            <Button title="Insert Data" onPress={insertData} />
-            <Text>Render count: {renderCount}</Text>
-            <Text>Number of passengers: {vehicle.numberOfPassengers}</Text>
-            <Text>Miles driven: {vehicle.milesDriven}</Text>
-            <Button
-                title="Add passenger"
+            <TouchableOpacity style={style.button} onPress={Onyx.clear}>
+                <Text>Clear Onyx</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={style.button} onPress={insertData}>
+                <Text>Insert Data</Text>
+            </TouchableOpacity>
+            <Text style={style.text}>Render count: {renderCount}</Text>
+            <Text style={style.text}>
+                Number of passengers: {vehicle.numberOfPassengers}
+            </Text>
+            <Text style={style.text}>Miles driven: {vehicle.milesDriven}</Text>
+            <TouchableOpacity
+                style={style.button}
                 onPress={() => {
                     Onyx.merge(ONYXKEYS.VEHICLE, {
                         numberOfPassengers: vehicle.numberOfPassengers + 1,
                     });
-                }}
-            />
-            <Button
-                title="Drive one mile"
+                }}>
+                <Text>Add passenger</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                style={style.button}
                 onPress={() => {
                     Onyx.merge(ONYXKEYS.VEHICLE, {
                         milesDriven: vehicle.milesDriven + 1,
                     });
-                }}
-            />
-            <Button
-                title="Reset"
+                }}>
+                <Text>Drive one mile</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+                style={style.button}
                 onPress={() => {
                     Onyx.set(ONYXKEYS.VEHICLE, originalVehicle);
-                }}
-            />
+                }}>
+                <Text>Reset</Text>
+            </TouchableOpacity>
         </View>
     );
 };

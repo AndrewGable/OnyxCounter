@@ -1,4 +1,4 @@
-import {Text, Button, View} from 'react-native';
+import {Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
 import _ from 'underscore';
 import style from '../Style';
@@ -23,8 +23,12 @@ function insertData() {
 const OnyxRelationships = ({owners = {}, pets = {}}) => {
     return (
         <View style={style.container}>
-            <Button title="Clear Onyx" onPress={Onyx.clear} />
-            <Button title="Insert Data" onPress={insertData} />
+            <TouchableOpacity style={style.button} onPress={Onyx.clear}>
+                <Text>Clear Onyx</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={style.button} onPress={insertData}>
+                <Text>Insert Data</Text>
+            </TouchableOpacity>
             {_.map(_.compact(pets), pet => {
                 const owner = {};
                 return (

@@ -1,4 +1,4 @@
-import {View} from 'react-native';
+import {SafeAreaView, ScrollView, View} from 'react-native';
 import style from './src/Style';
 import React from 'react';
 
@@ -18,15 +18,20 @@ Onyx.init({
 
 const App = () => {
     return (
-        <View style={style.container}>
-            <StateCounter />
-            <OnyxCounter />
-            <View style={style.hr} />
-            <OnyxExamples />
-            <View style={style.hr} />
-            {/*<OnyxPropertySelectors />*/}
-            {/*<OnyxRelationships />*/}
-            {/*<OnyxTriggeringActions />*/}
+        <View>
+            <SafeAreaView />
+            <ScrollView contentContainerStyle={style.scroll}>
+                <StateCounter />
+                <OnyxCounter />
+                <View style={style.hr} />
+                <OnyxExamples />
+                <View style={style.hr} />
+                <OnyxPropertySelectors />
+                <View style={style.hr} />
+                <OnyxRelationships />
+                <View style={style.hr} />
+                <OnyxTriggeringActions />
+            </ScrollView>
         </View>
     );
 };
