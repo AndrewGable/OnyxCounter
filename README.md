@@ -2,6 +2,10 @@
 
 Example application to demonstrate how to use [`react-native-onyx`](https://github.com/Expensify/react-native-onyx).
 
+| iOS                                  | Android                              |
+|--------------------------------------|--------------------------------------|
+| ![](https://i.imgur.com/VTSpPZ0.png) | ![](https://i.imgur.com/WqKEfvq.png) |
+
 ## How to run
 ### iOS 🍎
 1. Install dependencies: `npm install && cd ios && pod install && cd ..`
@@ -22,4 +26,5 @@ Example application to demonstrate how to use [`react-native-onyx`](https://gith
    - Non-React libraries should use `Onyx.connect()`
 4. Different Onyx methods
    - `set()` - See `clearNumberFacts()`
-   - `merge()`- See `getAndSaveNumberFact()`
+   - `merge()` - See `getAndSaveNumberFact()`
+   - `mergeCollection()` - see `mergeCatAndDogFacts()`

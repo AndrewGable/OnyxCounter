@@ -61,3 +61,34 @@ export function startNumberFactService() {
 export function clearNumberFacts() {
   Onyx.set(ONYXKEYS.NUMBER_FACTS, []);
 }
+
+/**
+ * Listens to when the FACTS collection is updated, callback is only fired once when entire collection is merged
+ * due to waitForCollectionCallback flag.
+ */
+Onyx.connect({
+  key: ONYXKEYS.COLLECTION.FACTS,
+  waitForCollectionCallback: true,
+  callback: allFacts => {
+    if (!allFacts) {
+      return;
+    }
+
+    alert(JSON.stringify(allFacts));
+  },
+});
+
+/**
+ * Merges two arrays of facts together into one Onyx collection
+ */
+export function mergeCatAndDogFacts() {
+  Onyx.mergeCollection(ONYXKEYS.COLLECTION.FACTS, {
+    [ONYXKEYS.COLLECTION.FACTS + 'CAT']: [
+      'In 1963 a cat went to space',
+      'Isaac Newton invented the cat door',
+    ],
+    [ONYXKEYS.COLLECTION.FACTS + 'DOG']: [
+      'Three dogs survived the Titanic sinking',
+    ],
+  });
+}

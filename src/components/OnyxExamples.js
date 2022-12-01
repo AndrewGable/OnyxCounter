@@ -1,10 +1,11 @@
-import {Button, Text, TouchableOpacity, View} from 'react-native';
+import {Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import style from '../Style';
 import {
   clearNumberFacts,
+  mergeCatAndDogFacts,
   startNumberFactService,
-} from '../lib/NumberFactService';
+} from '../lib/FactService';
 
 const OnyxExamples = ({counter = 0}) => (
   <View style={style.container}>
@@ -13,6 +14,9 @@ const OnyxExamples = ({counter = 0}) => (
     </TouchableOpacity>
     <TouchableOpacity style={style.button} onPress={clearNumberFacts}>
       <Text>Clear 🔢 facts</Text>
+    </TouchableOpacity>
+    <TouchableOpacity style={style.button} onPress={mergeCatAndDogFacts}>
+      <Text>Merge 🐱 and 🐶 facts</Text>
     </TouchableOpacity>
   </View>
 );
