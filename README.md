@@ -2,9 +2,9 @@
 
 Example application to demonstrate how to use [`react-native-onyx`](https://github.com/Expensify/react-native-onyx).
 
-iOS|Android
----|-------
-| <img width="400" src="https://i.imgur.com/VTSpPZ0.png" /> | <img width="400" src="https://i.imgur.com/WqKEfvq.png ?> |
+iOS| Android                                                  
+---|----------------------------------------------------------
+| <img width="400" src="https://i.imgur.com/VTSpPZ0.png" /> | <img width="400" src="https://i.imgur.com/WqKEfvq.png /> |
 
 ## How to run
 ### iOS 🍎
