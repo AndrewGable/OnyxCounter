@@ -4,7 +4,7 @@ Example application to demonstrate how to use [`react-native-onyx`](https://gith
 
 iOS| Android                                                  
 ---|----------------------------------------------------------
-| <img width="400" src="https://i.imgur.com/VTSpPZ0.png" /> | <img width="400" src="https://i.imgur.com/WqKEfvq.png /> |
+| <img width="400" src="https://i.imgur.com/VTSpPZ0.png" /> | <img width="400" src="https://i.imgur.com/WqKEfvq.png" /> |
 
 ## How to run
 ### iOS 🍎
