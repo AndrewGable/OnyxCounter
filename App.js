@@ -17,7 +17,7 @@ Onyx.init({
     keys: ONYXKEYS,
 });
 
-const App: () => Node = () => {
+const App = () => {
     return (
         <View style={style.container}>
             <StateCounter />
