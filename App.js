@@ -27,7 +27,7 @@ const App: () => Node = () => {
         <View style={style.hr} />
         {/*<OnyxPropertySelectors />*/}
         {/*<OnyxRelationships />*/}
-        <OnyxTriggeringActions />
+        {/*<OnyxTriggeringActions />*/}
     </View>
   );
 };

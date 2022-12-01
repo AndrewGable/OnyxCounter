@@ -45,3 +45,9 @@ export default withOnyx({
 })(OnyxRelationships);
 
 // const owner = owners[`${ONYXKEYS.COLLECTION.OWNERS}${pet.ownerID}`] || {};
+
+// Onyx.connect({
+//     key: ONYXKEYS.COLLECTION.OWNERS,
+//     waitForCollectionCallback: true,
+//     callback: console.log
+// });
