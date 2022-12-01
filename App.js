@@ -1,7 +1,6 @@
 import {View} from 'react-native';
 import style from './src/Style';
 import React from 'react';
-import type {Node} from 'react';
 
 import Onyx from 'react-native-onyx';
 import ONYXKEYS from './src/ONYXKEYS';
