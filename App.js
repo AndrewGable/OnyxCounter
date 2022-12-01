@@ -11,6 +11,7 @@ import OnyxCounter from './src/components/OnyxCounter';
 import OnyxExamples from './src/components/OnyxExamples';
 import OnyxPropertySelectors from './src/components/OnyxPropertySelectors';
 import OnyxRelationships from './src/components/OnyxRelationships';
+import OnyxTriggeringActions from './src/components/OnyxTriggeringActions';
 
 Onyx.init({
   keys: ONYXKEYS,
@@ -26,6 +27,7 @@ const App: () => Node = () => {
         <View style={style.hr} />
         {/*<OnyxPropertySelectors />*/}
         {/*<OnyxRelationships />*/}
+        <OnyxTriggeringActions />
     </View>
   );
 };
