@@ -8,21 +8,20 @@ import ONYXKEYS from '../ONYXKEYS';
 const owners = {
     owners_1: {id: 1, name: 'Tim'},
     owners_2: {id: 2, name: 'Andrew'},
-}
+};
 const pets = {
     pets_1: {id: 1, name: 'Fluffy', type: 'cat', ownerID: 1},
     pets_2: {id: 2, name: 'Snowball', type: 'cat', ownerID: 1},
     pets_3: {id: 3, name: 'Fido', type: 'dog', ownerID: 2},
     pets_4: {id: 4, name: 'Petey', type: 'bird', ownerID: 2},
 };
-Onyx.clear().then(() => {
-    Onyx.mergeCollection(ONYXKEYS.COLLECTION.OWNERS, owners);
-    Onyx.mergeCollection(ONYXKEYS.COLLECTION.PETS, pets);
-});
+Onyx.mergeCollection(ONYXKEYS.COLLECTION.OWNERS, owners);
+Onyx.mergeCollection(ONYXKEYS.COLLECTION.PETS, pets);
 
 const OnyxRelationships = ({owners = {}, pets = {}}) => {
     return (
         <View style={style.container}>
+            <Button title="Clear Onyx" onPress={Onyx.clear} />
             {_.map(_.compact(pets), (pet) => {
                 const owner = {};
                 return (
