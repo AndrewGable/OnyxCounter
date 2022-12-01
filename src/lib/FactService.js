@@ -74,7 +74,7 @@ Onyx.connect({
             return;
         }
 
-        alert(JSON.stringify(allFacts));
+        Alert.alert('All Facts', JSON.stringify(allFacts));
     },
 });
 
