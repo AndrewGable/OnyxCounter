@@ -15,14 +15,13 @@ const pets = {
     pets_3: {id: 3, name: 'Fido', type: 'dog', ownerID: 2},
     pets_4: {id: 4, name: 'Petey', type: 'bird', ownerID: 2},
 };
-Onyx.clear().then(() => {
-    Onyx.mergeCollection(ONYXKEYS.COLLECTION.OWNERS, owners);
-    Onyx.mergeCollection(ONYXKEYS.COLLECTION.PETS, pets);
-});
+Onyx.mergeCollection(ONYXKEYS.COLLECTION.OWNERS, owners);
+Onyx.mergeCollection(ONYXKEYS.COLLECTION.PETS, pets);
 
 const OnyxRelationships = ({owners = {}, pets = {}}) => {
     return (
         <View style={style.container}>
+            <Button title="Clear Onyx" onPress={Onyx.clear} />
             {_.map(_.compact(pets), pet => {
                 const owner = {};
                 return (
